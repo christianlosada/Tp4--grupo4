@@ -1,0 +1,87 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package tp4.grupo4;
+
+import java.util.HashSet;
+
+/**
+ *
+ * @author Netbook
+ */
+public class Alumno {
+    /*Un Alumno tiene un nro de legajo, un apellido, un nombre y una lista HashSet de
+materias en las que está inscripto; para ello tiene un método agregarMateria que permite
+inscribir al Alumno en una materia determinada (implementar de manera tal que no deje
+inscribir un alumno en dos materias iguales.) y otro método cantidadMaterias que devuelve la
+cantidad de materias a las que está inscripto el alumno.
+*/
+    private int legajo;
+    private String apellido, nombre;
+    HashSet <Materia> listaMaterias= new HashSet(); 
+
+    public Alumno(int legajo, String apellido, String nombre) {
+        this.legajo = legajo;
+        this.apellido = apellido;
+        this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "Alumno{" + "legajo=" + legajo + ", apellido=" + apellido + ", nombre=" + nombre + ", listaMaterias=" + listaMaterias + '}';
+    }
+
+    public int getLegajo() {
+        return legajo;
+    }
+
+    public void setLegajo(int legajo) {
+        this.legajo = legajo;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public HashSet<Materia> getListaMaterias() {
+        return listaMaterias;
+    }
+
+    public void setListaMaterias(HashSet<Materia> listaMaterias) {
+        this.listaMaterias = listaMaterias;
+    }
+    
+    //metodo agregarMateria
+    public  void agregarMateria(Materia m){
+        boolean bandera=false;
+        for (Materia listaMateria : listaMaterias) {
+           if(m.equals(listaMateria)){
+               bandera=true;
+           }
+           
+        }
+        if(bandera==false){
+            listaMaterias.add(m);
+        }
+    }
+    //metodo cantidadMateria
+    public int cantidadMaterias(){
+      
+        return listaMaterias.size();
+      
+    }
+}
