@@ -17,11 +17,19 @@ public class Vista_Principal extends javax.swing.JFrame {
     
       
       static HashSet <Alumno> listaAlumnos = new HashSet();
-
+static HashSet <Materia> listaM= new HashSet();
    
 
     public static void setListaAlumnos(HashSet<Alumno> listaAlumnos) {
         Vista_Principal.listaAlumnos = listaAlumnos;
+    }
+
+    public static HashSet<Materia> getListaM() {
+        return listaM;
+    }
+
+    public static void setListaM(HashSet<Materia> listaM) {
+        Vista_Principal.listaM = listaM;
     }
       
       

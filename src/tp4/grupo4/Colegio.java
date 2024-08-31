@@ -13,14 +13,14 @@ public class Colegio {
 
     /**
      * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+     
+
         // TODO code application logic here
         /*1. Crear las materias:
 a. Ingles I de primer año.
 b. Matemáticas de primer año.
 c. Laboratorio 1 de primer año*/
-        
+        /*
         Materia m1= new Materia(222, 1, "Ingles 1");
         Materia m2= new Materia(333, 1, "Matematica 1");
         Materia m3= new Materia(444, 1, "Laboratorio 1");
@@ -28,10 +28,12 @@ c. Laboratorio 1 de primer año*/
         /*Crear 2 alumnos.
 a. López Martin con legajo 1001.
 b. Martínez Brenda con legajo 1002.*/
+    /*
         Alumno a1 = new Alumno(1001, "Lopez", "Martin");
         Alumno a2 = new Alumno(1002, "Martinez", "Brenda");
-        
+        /*
         //Inscribir a López en las 3 materias.
+        /*
        a1.agregarMateria(m1);
        a1.agregarMateria(m2);
        a1.agregarMateria(m3);
@@ -43,6 +45,6 @@ b. Martínez Brenda con legajo 1002.*/
        //Visualizar la cantidad de materias a las que está inscripto cada alumno.
         System.out.println("cantidad materias Lopez: " + a1.cantidadMaterias());
         System.out.println("cantidad materias Martinez: " + a2.cantidadMaterias());
-    }
+    */
     
 }

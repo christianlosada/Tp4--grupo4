@@ -13,14 +13,12 @@ import tp4.grupo4.Materia;
  * @author Netbook
  */
 public class VistaMaterias extends javax.swing.JInternalFrame {
-    HashSet <Materia> listaM= new HashSet();
+    
     /**
      * Creates new form Vista
      */
     public VistaMaterias() {
         initComponents();
-        
-        
     }
 
     /**
@@ -44,7 +42,7 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         btnSalir = new javax.swing.JButton();
         btnNuevo = new javax.swing.JButton();
 
-        jDesktopPane1.setBackground(new java.awt.Color(204, 255, 255));
+        jDesktopPane1.setBackground(new java.awt.Color(0, 0, 0));
 
         lblIdMateria.setText("Código Materia");
 
@@ -55,11 +53,6 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
 
         lblNombreMateria.setText("Nombre Materia:");
 
-        txtIdMateria.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtIdMateriaMouseClicked(evt);
-            }
-        });
         txtIdMateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdMateriaActionPerformed(evt);
@@ -67,6 +60,11 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         });
 
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnSalir.setText("Salir");
 
@@ -155,13 +153,17 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtIdMateriaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIdMateriaMouseClicked
-        txtIdMateria.setText("");
-    }//GEN-LAST:event_txtIdMateriaMouseClicked
-
     private void txtIdMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdMateriaActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtIdMateriaActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        int id= Integer.parseInt(txtIdMateria.getText());
+        int anio= Integer.parseInt(txtAnio.getText());
+        String nombre= txtNombreMateria.getText();
+        Materia materia=new Materia(id,anio,nombre);
+        Vista_Principal.getListaM().add(materia);
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -139,7 +139,7 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void llenarComboMateria() {
-        for (Materia m : Alumno.listaMaterias){
+        for (Materia m : Vista_Principal.getListaM()){
      
         cbMateria.addItem(m.getNombreMateria());
         }
