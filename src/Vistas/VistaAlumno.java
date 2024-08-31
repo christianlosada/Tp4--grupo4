@@ -22,7 +22,7 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
       private HashSet <Alumno> listaAlumnos = new HashSet();
     public VistaAlumno() {
         initComponents();
-        Vista_Principal.get
+        
     }
 
     /**
@@ -159,6 +159,7 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
 
     private void txtLegajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLegajoActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtLegajoActionPerformed
 
     private void txtLegajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLegajoMouseClicked

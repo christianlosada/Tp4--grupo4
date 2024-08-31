@@ -5,7 +5,7 @@
  */
 package tp4.grupo4;
 
-import java.util.HashSet;
+
 
 /**
  *
@@ -23,7 +23,7 @@ cada uno de sus
 atributos.*/
      private int idMateria, anio;
      private String nombreMateria;
-     static HashSet <Materia> listaMaterias = new HashSet();
+     
 
     public Materia(int idMateria, int anio, String nombreMateria) {
         this.idMateria = idMateria;
@@ -33,7 +33,7 @@ atributos.*/
 
     @Override
     public String toString() {
-        return "Materia{" + "idMateria=" + idMateria + ", anio=" + anio + ", nombreMateria=" + nombreMateria + '}';
+        return nombreMateria ;
     }
     
 

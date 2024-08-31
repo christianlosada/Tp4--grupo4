@@ -15,13 +15,18 @@ import tp4.grupo4.Materia;
  */
 public class Vista_Principal extends javax.swing.JFrame {
     
-      static HashSet <Materia> listaMaterias = new HashSet();
+      
       static HashSet <Alumno> listaAlumnos = new HashSet();
+
+   
+
+    public static void setListaAlumnos(HashSet<Alumno> listaAlumnos) {
+        Vista_Principal.listaAlumnos = listaAlumnos;
+    }
+      
       
 
-    public static HashSet<Materia> getListaMaterias() {
-        return listaMaterias;
-    }
+  
 
     public static HashSet<Alumno> getListaAlumnos() {
         return listaAlumnos;

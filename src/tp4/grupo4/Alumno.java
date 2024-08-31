@@ -5,7 +5,9 @@
  */
 package tp4.grupo4;
 
+import Vistas.Vista_Principal;
 import java.util.HashSet;
+
 
 /**
  *
@@ -20,7 +22,8 @@ cantidad de materias a las que está inscripto el alumno.
 */
     private int legajo;
     private String apellido, nombre;
-    HashSet <Materia> listaMaterias= new HashSet(); 
+    public static HashSet <Materia> listaMaterias = new HashSet(); 
+    
 
     public Alumno(int legajo, String apellido, String nombre) {
         this.legajo = legajo;
@@ -30,7 +33,7 @@ cantidad de materias a las que está inscripto el alumno.
 
     @Override
     public String toString() {
-        return "Alumno{" + "legajo=" + legajo + ", apellido=" + apellido + ", nombre=" + nombre + ", listaMaterias=" + listaMaterias + '}';
+        return nombre + " " + apellido;
     }
 
     public int getLegajo() {
@@ -64,20 +67,42 @@ cantidad de materias a las que está inscripto el alumno.
     public void setListaMaterias(HashSet<Materia> listaMaterias) {
         this.listaMaterias = listaMaterias;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 53 * hash + this.legajo;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Alumno other = (Alumno) obj;
+        if (this.legajo != other.legajo) {
+            return false;
+        }
+        return true;
+    }
+
+    
+    
     
     //metodo agregarMateria
     public  void agregarMateria(Materia m){
-        boolean bandera=false;
-        for (Materia listaMateria : listaMaterias) {
-           if(m.equals(listaMateria)){
-               bandera=true;
-           }
-           
-        }
-        if(bandera==false){
+       
             listaMaterias.add(m);
-        }
     }
+   
+    
     //metodo cantidadMateria
     public int cantidadMaterias(){
       

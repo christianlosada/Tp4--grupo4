@@ -18,11 +18,11 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
     /**
      * Creates new form NewJInternalFrame
      */
-    private HashSet <Materia> listaMaterias = new HashSet();
+    
       private HashSet <Alumno> listaAlumnos = new HashSet();
     public VistaInscripcion() {
         initComponents();
-        listaMaterias=Vista_Principal.getListaMaterias();
+        
         llenarComboMateria();
     }
 
@@ -131,7 +131,7 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnInscribir;
     private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<Alumno> cbAlumno;
-    private javax.swing.JComboBox<Materia> cbMateria;
+    private javax.swing.JComboBox<String> cbMateria;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel lblAlumno;
     private javax.swing.JLabel lblMateria;
@@ -139,8 +139,9 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void llenarComboMateria() {
-        for (Materia m : listaMaterias) {
-            cbMateria.addItem(m);
+        for (Materia m : Alumno.listaMaterias){
+     
+        cbMateria.addItem(m.getNombreMateria());
         }
     }
 }
