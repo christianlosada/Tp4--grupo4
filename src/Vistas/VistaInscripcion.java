@@ -154,13 +154,13 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
                                     .addComponent(btnInscribir))
                                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                        .addGap(93, 93, 93)
-                                        .addComponent(btnSalir))
-                                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
                                         .addGap(55, 55, 55)
                                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(cbAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(cbMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(cbMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                                        .addGap(92, 92, 92)
+                                        .addComponent(btnSalir))))
                             .addGroup(jDesktopPane1Layout.createSequentialGroup()
                                 .addGap(128, 128, 128)
                                 .addComponent(lblTitulo)))
@@ -183,13 +183,13 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(77, 77, 77)
+                .addGap(26, 26, 26)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInscribir)
                     .addComponent(btnSalir))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -210,21 +210,26 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
         Materia materia= (Materia) cbMateria.getSelectedItem();
         Alumno alumno= (Alumno) cbAlumno.getSelectedItem();
         alumno.agregarMateria(materia);
-       for (Alumno a : Vista_Principal.getListaAlumnos()) {
-            cbMateria.getit
+       boolean Bandera = false;
+    for (int i = 0; i < cbAlumnosIns.getItemCount(); i++) {
+        Alumno a = (Alumno) cbAlumnosIns.getItemAt(i);
+        if (a.equals(alumno)) {  
+            Bandera = true;
+            break;
+        }
+    }if (!Bandera) {
+        cbAlumnosIns.addItem(alumno);
+    
         }
     }//GEN-LAST:event_btnInscribirActionPerformed
 
     private void cbAlumnosInsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAlumnosInsActionPerformed
-
+        Alumno alumnoSeleccionado = (Alumno) cbAlumnosIns.getSelectedItem();
         
     }//GEN-LAST:event_cbAlumnosInsActionPerformed
 
     private void cbAlumnosInsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbAlumnosInsItemStateChanged
-       Alumno alumno= (Alumno) cbAlumnosIns.getSelectedItem();
-        txtMateria1.setText((String)alumno.getMateriasIncriptas().get(0));
-        txtMateria2.setText((String)alumno.getMateriasIncriptas().get(1));
-        txtMateria3.setText((String)alumno.getMateriasIncriptas().get(2));
+      
     }//GEN-LAST:event_cbAlumnosInsItemStateChanged
 
 
