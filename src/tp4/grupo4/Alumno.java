@@ -6,6 +6,7 @@
 package tp4.grupo4;
 
 import Vistas.Vista_Principal;
+import java.util.ArrayList;
 import java.util.HashSet;
 
 
@@ -22,7 +23,15 @@ cantidad de materias a las que está inscripto el alumno.
 */
     private int legajo;
     private String apellido, nombre;
-    public static HashSet <Materia> listaMaterias = new HashSet(); 
+    private ArrayList<Materia> materiasIncriptas=new ArrayList();
+
+    public ArrayList getMateriasIncriptas() {
+        return materiasIncriptas;
+    }
+
+    public void setMateriasIncriptas(ArrayList materiasIncriptas) {
+        this.materiasIncriptas = materiasIncriptas;
+    }
     
 
     public Alumno(int legajo, String apellido, String nombre) {
@@ -33,7 +42,7 @@ cantidad de materias a las que está inscripto el alumno.
 
     @Override
     public String toString() {
-        return nombre + " " + apellido;
+        return apellido + " " + nombre;
     }
 
     public int getLegajo() {
@@ -60,13 +69,6 @@ cantidad de materias a las que está inscripto el alumno.
         this.nombre = nombre;
     }
 
-    public HashSet<Materia> getListaMaterias() {
-        return listaMaterias;
-    }
-
-    public void setListaMaterias(HashSet<Materia> listaMaterias) {
-        this.listaMaterias = listaMaterias;
-    }
 
     @Override
     public int hashCode() {
@@ -92,21 +94,11 @@ cantidad de materias a las que está inscripto el alumno.
         }
         return true;
     }
-
     
-    
-    
-    //metodo agregarMateria
-    public  void agregarMateria(Materia m){
-       
-            listaMaterias.add(m);
+    public void agregarMateria(Materia m){
+        materiasIncriptas.add(m);
     }
-   
-    
-    //metodo cantidadMateria
     public int cantidadMaterias(){
-      
-        return listaMaterias.size();
-      
+        return materiasIncriptas.size();
     }
 }

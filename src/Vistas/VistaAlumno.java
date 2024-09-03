@@ -19,7 +19,7 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
      * Creates new form VistaInscripcion
      */
     
-      private HashSet <Alumno> listaAlumnos = new HashSet();
+     
     public VistaAlumno() {
         initComponents();
         
@@ -65,6 +65,11 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
         });
 
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         btnNuevo.setText("Nuevo");
         btnNuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -170,6 +175,11 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
         txtNombre.setText("");
         txtLegajo.setText("");
     }//GEN-LAST:event_btnNuevoActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+       // System.exit(0);
+       hide();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

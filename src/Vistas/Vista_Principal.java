@@ -14,11 +14,9 @@ import tp4.grupo4.Materia;
  * @author Netbook
  */
 public class Vista_Principal extends javax.swing.JFrame {
-    
-      
-      static HashSet <Alumno> listaAlumnos = new HashSet();
-static HashSet <Materia> listaM= new HashSet();
-   
+
+    static HashSet<Alumno> listaAlumnos = new HashSet();
+    static HashSet<Materia> listaM = new HashSet();
 
     public static void setListaAlumnos(HashSet<Alumno> listaAlumnos) {
         Vista_Principal.listaAlumnos = listaAlumnos;
@@ -31,15 +29,11 @@ static HashSet <Materia> listaM= new HashSet();
     public static void setListaM(HashSet<Materia> listaM) {
         Vista_Principal.listaM = listaM;
     }
-      
-      
-
-  
 
     public static HashSet<Alumno> getListaAlumnos() {
         return listaAlumnos;
     }
-      
+
     /**
      * Creates new form Vista_Unica
      */
@@ -50,7 +44,7 @@ static HashSet <Materia> listaM= new HashSet();
 2. HashSet <Materia> A COMPARTIR con vista Materias y Vista Inscripción
 3. Al invocar el constructor de los JinternalFrame, pase los SET como
 argumentos, para cargarlos o mostrarlos*/
-        
+
     }
 
     /**
@@ -79,7 +73,7 @@ argumentos, para cargarlos o mostrarlos*/
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 613, Short.MAX_VALUE)
+            .addGap(0, 623, Short.MAX_VALUE)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,34 +142,34 @@ argumentos, para cargarlos o mostrarlos*/
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmiAgregarAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAgregarAlumnoActionPerformed
-    escritorio.removeAll();
-    escritorio.repaint();
-    VistaAlumno a1= new VistaAlumno();
-    a1.setVisible(true);
-    escritorio.add(a1);
-    escritorio.moveToFront(a1);
+        escritorio.removeAll();
+        escritorio.repaint();
+        VistaAlumno a1 = new VistaAlumno();
+        a1.setVisible(true);
+        escritorio.add(a1);
+        escritorio.moveToFront(a1);
     }//GEN-LAST:event_jmiAgregarAlumnoActionPerformed
 
     private void jmAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmAlumnoActionPerformed
-    
+
     }//GEN-LAST:event_jmAlumnoActionPerformed
 
     private void jmiAgregarMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAgregarMateriaActionPerformed
-    escritorio.removeAll();
-    escritorio.repaint();
-    VistaMaterias a1= new VistaMaterias();
-    a1.setVisible(true);
-    escritorio.add(a1);
-    escritorio.moveToFront(a1);
+        escritorio.removeAll();
+        escritorio.repaint();
+        VistaMaterias a1 = new VistaMaterias();
+        a1.setVisible(true);
+        escritorio.add(a1);
+        escritorio.moveToFront(a1);
     }//GEN-LAST:event_jmiAgregarMateriaActionPerformed
 
     private void jmiFormularioInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiFormularioInscripcionActionPerformed
-    escritorio.removeAll();
-    escritorio.repaint();
-    VistaInscripcion a1= new VistaInscripcion();
-    a1.setVisible(true);
-    escritorio.add(a1);
-    escritorio.moveToFront(a1);        // TODO add your handling code here:
+        escritorio.removeAll();
+        escritorio.repaint();
+        VistaInscripcion a1 = new VistaInscripcion();
+        a1.setVisible(true);
+        escritorio.add(a1);
+        escritorio.moveToFront(a1);        // TODO add your handling code here:
     }//GEN-LAST:event_jmiFormularioInscripcionActionPerformed
 
     /**

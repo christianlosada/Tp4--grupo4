@@ -25,12 +25,16 @@ atributos.*/
      private String nombreMateria;
      
 
-    public Materia(int idMateria, int anio, String nombreMateria) {
+    public Materia() {
+        
+    }
+
+    public void agregarMateria(int idMateria, int anio, String nombreMateria){
         this.idMateria = idMateria;
         this.anio = anio;
         this.nombreMateria = nombreMateria;
     }
-
+            
     @Override
     public String toString() {
         return nombreMateria ;

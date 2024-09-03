@@ -302,7 +302,8 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         int id= Integer.parseInt(txtIdMateria.getText());
         int anio= Integer.parseInt(txtAnio.getText());
         String nombre= txtNombreMateria.getText();
-        Materia materia=new Materia(id,anio,nombre);
+        Materia materia=new Materia();
+        materia.agregarMateria(id,anio,nombre);
         Vista_Principal.getListaM().add(materia);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
