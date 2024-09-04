@@ -6,6 +6,7 @@
 package Vistas;
 
 import java.util.HashSet;
+import javax.swing.JOptionPane;
 import tp4.grupo4.Alumno;
 
 
@@ -56,6 +57,12 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
         lblTituloAlumnos.setText("FORMULARIO ALUMNOS");
 
         lblApellido.setText("Apellido:");
+
+        txtLegajo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLegajoActionPerformed(evt);
+            }
+        });
 
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -163,11 +170,17 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        try{
         String apellido= txtApellido.getText();
         String nombre= txtNombre.getText();
         int legajo= Integer.parseInt(txtLegajo.getText());   
         Alumno alumno = new Alumno(legajo, apellido, nombre);
         Vista_Principal.getListaAlumnos().add(alumno);
+        }catch(NumberFormatException nb){
+            JOptionPane.showMessageDialog(this, "ingrese un numero", "ERROR", HEIGHT);
+            txtLegajo.setText("");
+            
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
@@ -180,6 +193,10 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
        // System.exit(0);
        hide();
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void txtLegajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLegajoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtLegajoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

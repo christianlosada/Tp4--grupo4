@@ -17,6 +17,9 @@ public class Vista_Principal extends javax.swing.JFrame {
 
     static HashSet<Alumno> listaAlumnos = new HashSet();
     static HashSet<Materia> listaM = new HashSet();
+    
+        
+    
 
     public static void setListaAlumnos(HashSet<Alumno> listaAlumnos) {
         Vista_Principal.listaAlumnos = listaAlumnos;
@@ -122,6 +125,11 @@ argumentos, para cargarlos o mostrarlos*/
         jMenuBar1.add(jmRegistro);
 
         jmSalir.setText("Salir");
+        jmSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmSalirActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jmSalir);
 
         setJMenuBar(jMenuBar1);
@@ -172,6 +180,10 @@ argumentos, para cargarlos o mostrarlos*/
         escritorio.moveToFront(a1);        // TODO add your handling code here:
     }//GEN-LAST:event_jmiFormularioInscripcionActionPerformed
 
+    private void jmSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmSalirActionPerformed
+         hide();
+    }//GEN-LAST:event_jmSalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -206,7 +218,10 @@ argumentos, para cargarlos o mostrarlos*/
                 new Vista_Principal().setVisible(true);
             }
         });
+        
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane escritorio;
@@ -220,3 +235,4 @@ argumentos, para cargarlos o mostrarlos*/
     private javax.swing.JMenuItem jmiFormularioInscripcion;
     // End of variables declaration//GEN-END:variables
 }
+

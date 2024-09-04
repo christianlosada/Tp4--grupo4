@@ -64,6 +64,11 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
         lblAlumno.setText("Elija un Alumno:");
 
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         btnInscribir.setText("Inscribir");
         btnInscribir.addActionListener(new java.awt.event.ActionListener() {
@@ -236,6 +241,10 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
 
         }
     }//GEN-LAST:event_cbAlumnosInsItemStateChanged
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+         hide();
+    }//GEN-LAST:event_btnSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

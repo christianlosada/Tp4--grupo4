@@ -136,6 +136,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtLegajo">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLegajoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNombre">
         </Component>

@@ -6,6 +6,8 @@
 package Vistas;
 
 import java.util.HashSet;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import tp4.grupo4.Materia;
 
 /**
@@ -13,12 +15,27 @@ import tp4.grupo4.Materia;
  * @author Netbook
  */
 public class VistaMaterias extends javax.swing.JInternalFrame {
-    
+
     /**
      * Creates new form Vista
      */
     public VistaMaterias() {
         initComponents();
+    }
+
+    public boolean ValidarCamposVacios(JPanel jpMateria) {
+        boolean Bandera = true;
+        for (int i = 0; i < jpMateria.getComponents().length; i++) {
+            if (!Bandera) {
+                break;
+            }
+            {
+
+            }
+
+        }
+        return false;
+
     }
 
     /**
@@ -30,7 +47,7 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jpMateria = new javax.swing.JDesktopPane();
         lblIdMateria = new javax.swing.JLabel();
         lbanio = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
@@ -54,7 +71,7 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         btnSalir1 = new javax.swing.JButton();
         btnNuevo1 = new javax.swing.JButton();
 
-        jDesktopPane1.setBackground(new java.awt.Color(0, 0, 0));
+        jpMateria.setBackground(new java.awt.Color(0, 0, 0));
 
         lblIdMateria.setText("Código Materia");
 
@@ -79,6 +96,11 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         });
 
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         btnNuevo.setText("Nuevo");
         btnNuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -87,70 +109,70 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
             }
         });
 
-        jDesktopPane1.setLayer(lblIdMateria, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(lbanio, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(lblTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(lblNombreMateria, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(txtIdMateria, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(txtAnio, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(txtNombreMateria, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(btnGuardar, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(btnSalir, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(btnNuevo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jpMateria.setLayer(lblIdMateria, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jpMateria.setLayer(lbanio, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jpMateria.setLayer(lblTitulo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jpMateria.setLayer(lblNombreMateria, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jpMateria.setLayer(txtIdMateria, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jpMateria.setLayer(txtAnio, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jpMateria.setLayer(txtNombreMateria, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jpMateria.setLayer(btnGuardar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jpMateria.setLayer(btnSalir, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jpMateria.setLayer(btnNuevo, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jpMateriaLayout = new javax.swing.GroupLayout(jpMateria);
+        jpMateria.setLayout(jpMateriaLayout);
+        jpMateriaLayout.setHorizontalGroup(
+            jpMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpMateriaLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(btnGuardar)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                .addGroup(jpMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jpMateriaLayout.createSequentialGroup()
                         .addGap(89, 89, 89)
                         .addComponent(btnNuevo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                         .addComponent(btnSalir)
                         .addGap(48, 48, 48))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDesktopPane1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpMateriaLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGroup(jpMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jpMateriaLayout.createSequentialGroup()
                                 .addComponent(lblNombreMateria)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtNombreMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                            .addGroup(jpMateriaLayout.createSequentialGroup()
                                 .addComponent(lbanio)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMateriaLayout.createSequentialGroup()
                                 .addComponent(lblIdMateria)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtIdMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMateriaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblTitulo)
                 .addGap(139, 139, 139))
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDesktopPane1Layout.createSequentialGroup()
+        jpMateriaLayout.setVerticalGroup(
+            jpMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpMateriaLayout.createSequentialGroup()
                 .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jpMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtIdMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblIdMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jpMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNombreMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNombreMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jpMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbanio, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jpMateriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardar)
                     .addComponent(btnNuevo)
                     .addComponent(btnSalir))
@@ -274,7 +296,7 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jpMateria)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -283,7 +305,7 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(jpMateria)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -295,16 +317,25 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtIdMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdMateriaActionPerformed
-        
+
     }//GEN-LAST:event_txtIdMateriaActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        int id= Integer.parseInt(txtIdMateria.getText());
-        int anio= Integer.parseInt(txtAnio.getText());
-        String nombre= txtNombreMateria.getText();
-        Materia materia=new Materia();
-        materia.agregarMateria(id,anio,nombre);
-        Vista_Principal.getListaM().add(materia);
+        try {
+            int id = Integer.parseInt(txtIdMateria.getText());
+            int anio = Integer.parseInt(txtAnio.getText());
+            String nombre = txtNombreMateria.getText();
+
+            Materia materia = new Materia();
+            materia.agregarMateria(id, anio, nombre);
+
+            Vista_Principal.getListaM().add(materia);
+        } catch (NumberFormatException nb) {
+            JOptionPane.showMessageDialog(this, "ingrese un numero", "ERROR", HEIGHT);
+            txtIdMateria.setText("");
+            txtAnio.setText("");
+            
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
@@ -325,6 +356,10 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnNuevo1ActionPerformed
 
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        hide();
+    }//GEN-LAST:event_btnSalirActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
@@ -333,9 +368,9 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnNuevo1;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton btnSalir1;
-    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDesktopPane jDesktopPane2;
     private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JDesktopPane jpMateria;
     private javax.swing.JLabel lbanio;
     private javax.swing.JLabel lbanio1;
     private javax.swing.JLabel lblIdMateria;
