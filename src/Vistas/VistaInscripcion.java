@@ -210,7 +210,9 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscribirActionPerformed
+        try{
         Materia materia = (Materia) cbMateria.getSelectedItem();
+        
         Alumno alumno = (Alumno) cbAlumno.getSelectedItem();
         alumno.agregarMateria(materia);
         cbAlumnosIns.setSelectedIndex(-1);
@@ -218,11 +220,13 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
         cbMateria.setSelectedIndex(-1);
         DefaultListModel<String> modelo = new DefaultListModel<>();
         jList1.setModel(modelo);
-
+        }catch(NullPointerException np){
+            JOptionPane.showMessageDialog(this, "no ingreso ningun dato", "ERROR", HEIGHT);
+        }
     }//GEN-LAST:event_btnInscribirActionPerformed
 
     private void cbAlumnosInsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAlumnosInsActionPerformed
-
+        jList1.remove(this);
     }//GEN-LAST:event_cbAlumnosInsActionPerformed
 
     private void cbAlumnosInsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbAlumnosInsItemStateChanged
