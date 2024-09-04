@@ -9,30 +9,29 @@ import Vistas.Vista_Principal;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-
 /**
  *
  * @author Netbook
  */
 public class Alumno {
+
     /*Un Alumno tiene un nro de legajo, un apellido, un nombre y una lista HashSet de
 materias en las que está inscripto; para ello tiene un método agregarMateria que permite
 inscribir al Alumno en una materia determinada (implementar de manera tal que no deje
 inscribir un alumno en dos materias iguales.) y otro método cantidadMaterias que devuelve la
 cantidad de materias a las que está inscripto el alumno.
-*/
+     */
     private int legajo;
     private String apellido, nombre;
-    private ArrayList<Materia> materiasIncriptas=new ArrayList();
+    private HashSet<Materia> materiasIncriptas = new HashSet();
 
-    public ArrayList getMateriasIncriptas() {
+    public HashSet<Materia> getMateriasIncriptas() {
         return materiasIncriptas;
     }
 
-    public void setMateriasIncriptas(ArrayList materiasIncriptas) {
+    public void setMateriasIncriptas(HashSet<Materia> materiasIncriptas) {
         this.materiasIncriptas = materiasIncriptas;
     }
-    
 
     public Alumno(int legajo, String apellido, String nombre) {
         this.legajo = legajo;
@@ -69,7 +68,6 @@ cantidad de materias a las que está inscripto el alumno.
         this.nombre = nombre;
     }
 
-
     @Override
     public int hashCode() {
         int hash = 3;
@@ -94,11 +92,12 @@ cantidad de materias a las que está inscripto el alumno.
         }
         return true;
     }
-    
-    public void agregarMateria(Materia m){
+
+    public void agregarMateria(Materia m) {
         materiasIncriptas.add(m);
     }
-    public int cantidadMaterias(){
+
+    public int cantidadMaterias() {
         return materiasIncriptas.size();
     }
 }

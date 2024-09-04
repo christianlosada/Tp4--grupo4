@@ -7,6 +7,8 @@ package Vistas;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import tp4.grupo4.Alumno;
 import tp4.grupo4.Materia;
@@ -20,11 +22,12 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
     /**
      * Creates new form NewJInternalFrame
      */
-    private ArrayList<Alumno> listaAlumnosInscriptos = new ArrayList();
-
     public VistaInscripcion() {
         initComponents();
         llenarCombo();
+        cbAlumnosIns.setSelectedIndex(-1);
+        cbAlumno.setSelectedIndex(-1);
+        cbMateria.setSelectedIndex(-1);
     }
 
     /**
@@ -84,11 +87,6 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
 
         lblAlumnosIns.setText("Alumnos");
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(jList1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -207,29 +205,36 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscribirActionPerformed
-        Materia materia= (Materia) cbMateria.getSelectedItem();
-        Alumno alumno= (Alumno) cbAlumno.getSelectedItem();
+        Materia materia = (Materia) cbMateria.getSelectedItem();
+        Alumno alumno = (Alumno) cbAlumno.getSelectedItem();
         alumno.agregarMateria(materia);
-       boolean Bandera = false;
-    for (int i = 0; i < cbAlumnosIns.getItemCount(); i++) {
-        Alumno a = (Alumno) cbAlumnosIns.getItemAt(i);
-        if (a.equals(alumno)) {  
-            Bandera = true;
-            break;
-        }
-    }if (!Bandera) {
-        cbAlumnosIns.addItem(alumno);
-    
-        }
+        cbAlumnosIns.setSelectedIndex(-1);
+        cbAlumno.setSelectedIndex(-1);
+        cbMateria.setSelectedIndex(-1);
+        DefaultListModel<String> modelo = new DefaultListModel<>();
+        jList1.setModel(modelo);
+
     }//GEN-LAST:event_btnInscribirActionPerformed
 
     private void cbAlumnosInsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAlumnosInsActionPerformed
-        Alumno alumnoSeleccionado = (Alumno) cbAlumnosIns.getSelectedItem();
-        
+
     }//GEN-LAST:event_cbAlumnosInsActionPerformed
 
     private void cbAlumnosInsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbAlumnosInsItemStateChanged
-      
+        try {
+            DefaultListModel<String> modelo = new DefaultListModel<>();
+
+            Alumno alumno = (Alumno) cbAlumnosIns.getSelectedItem();
+
+            for (Object mate : alumno.getMateriasIncriptas()) {
+                Materia materia = (Materia) mate;
+                modelo.addElement(materia.toString());
+                jList1.setModel(modelo);
+            }
+
+        } catch (NullPointerException error) {
+
+        }
     }//GEN-LAST:event_cbAlumnosInsItemStateChanged
 
 
@@ -257,6 +262,10 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
 
         for (Alumno a : Vista_Principal.getListaAlumnos()) {
             cbAlumno.addItem(a);
+        }
+
+        for (Alumno x : Vista_Principal.getListaAlumnos()) {
+            cbAlumnosIns.addItem(x);
         }
     }
 }
