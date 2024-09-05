@@ -10,7 +10,7 @@ import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import tp4.grupo4.Materia;
+import Entidades.Materia;
 
 /**
  *

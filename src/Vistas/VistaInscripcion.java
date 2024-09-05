@@ -10,8 +10,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
-import tp4.grupo4.Alumno;
-import tp4.grupo4.Materia;
+import Entidades.Alumno;
+import Entidades.Materia;
 
 /**
  *

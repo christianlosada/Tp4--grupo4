@@ -6,8 +6,8 @@
 package Vistas;
 
 import java.util.HashSet;
-import tp4.grupo4.Alumno;
-import tp4.grupo4.Materia;
+import Entidades.Alumno;
+import Entidades.Materia;
 
 /**
  *

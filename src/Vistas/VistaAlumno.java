@@ -9,7 +9,7 @@ import java.util.HashSet;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import tp4.grupo4.Alumno;
+import Entidades.Alumno;
 
 /**
  *
