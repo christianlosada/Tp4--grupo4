@@ -125,9 +125,9 @@ argumentos, para cargarlos o mostrarlos*/
         jMenuBar1.add(jmRegistro);
 
         jmSalir.setText("Salir");
-        jmSalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmSalirActionPerformed(evt);
+        jmSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jmSalirMouseClicked(evt);
             }
         });
         jMenuBar1.add(jmSalir);
@@ -180,9 +180,9 @@ argumentos, para cargarlos o mostrarlos*/
         escritorio.moveToFront(a1);        // TODO add your handling code here:
     }//GEN-LAST:event_jmiFormularioInscripcionActionPerformed
 
-    private void jmSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmSalirActionPerformed
-         hide();
-    }//GEN-LAST:event_jmSalirActionPerformed
+    private void jmSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmSalirMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_jmSalirMouseClicked
 
     /**
      * @param args the command line arguments
