@@ -211,17 +211,20 @@ public class VistaInscripcion extends javax.swing.JInternalFrame {
 
     private void btnInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscribirActionPerformed
         try{
-        Materia materia = (Materia) cbMateria.getSelectedItem();
-        
+        Materia materia = (Materia) cbMateria.getSelectedItem(); 
         Alumno alumno = (Alumno) cbAlumno.getSelectedItem();
-        alumno.agregarMateria(materia);
+        if(alumno.getMateriasIncriptas().contains(materia)){
+             JOptionPane.showMessageDialog(this, "El alumno ya esta incripto en "+materia.toString(), "ERROR", HEIGHT);
+        }else{
+            alumno.agregarMateria(materia);
+        }
         cbAlumnosIns.setSelectedIndex(-1);
         cbAlumno.setSelectedIndex(-1);
         cbMateria.setSelectedIndex(-1);
         DefaultListModel<String> modelo = new DefaultListModel<>();
         jList1.setModel(modelo);
         }catch(NullPointerException np){
-            JOptionPane.showMessageDialog(this, "no ingreso ningun dato", "ERROR", HEIGHT);
+            JOptionPane.showMessageDialog(this, "No ingreso ningun dato", "ERROR", HEIGHT);
         }
     }//GEN-LAST:event_btnInscribirActionPerformed
 

@@ -6,9 +6,10 @@
 package Vistas;
 
 import java.util.HashSet;
+import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import tp4.grupo4.Alumno;
-
 
 /**
  *
@@ -19,11 +20,22 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
     /**
      * Creates new form VistaInscripcion
      */
-    
-     
+    public boolean ValidarCamposVacios(JDesktopPane jpMateria) {
+        boolean bandera = true;
+        for (int i = 0; i < jpMateria.getComponents().length; i++) {
+            if (!bandera) {
+                break;
+            }
+            if (jpMateria.getComponents()[i] instanceof JTextField) {
+                bandera = !((JTextField) jpMateria.getComponents()[i]).getText().equals("") ? true : false;
+            }
+        }
+        return bandera;
+    }
+
     public VistaAlumno() {
         initComponents();
-        
+
     }
 
     /**
@@ -170,17 +182,21 @@ public class VistaAlumno extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        try{
-        String apellido= txtApellido.getText();
-        String nombre= txtNombre.getText();
-        int legajo= Integer.parseInt(txtLegajo.getText());   
-        Alumno alumno = new Alumno(legajo, apellido, nombre);
-        Vista_Principal.getListaAlumnos().add(alumno);
-        }catch(NumberFormatException nb){
-            JOptionPane.showMessageDialog(this, "ingrese un numero", "ERROR", HEIGHT);
-            txtLegajo.setText("");
+        try {
+            String apellido = txtApellido.getText();
+            String nombre = txtNombre.getText();
+            int legajo = Integer.parseInt(txtLegajo.getText());
+            if (ValidarCamposVacios(jDesktopPane1)) {
+                Alumno alumno = new Alumno(legajo, apellido, nombre);
+                Vista_Principal.getListaAlumnos().add(alumno);
+            } else {
+                JOptionPane.showMessageDialog(this, "Complete los campos", "ERROR", HEIGHT);
+            }
             
-        }
+        } catch (NumberFormatException nb) {
+            JOptionPane.showMessageDialog(this, "Ingrese un numero", "ERROR", HEIGHT);
+            txtLegajo.setText("");
+        } 
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed

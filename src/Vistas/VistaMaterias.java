@@ -6,8 +6,10 @@
 package Vistas;
 
 import java.util.HashSet;
+import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import tp4.grupo4.Materia;
 
 /**
@@ -23,19 +25,17 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
         initComponents();
     }
 
-    public boolean ValidarCamposVacios(JPanel jpMateria) {
-        boolean Bandera = true;
+    public boolean ValidarCamposVacios(JDesktopPane jpMateria) {
+        boolean bandera = true;
         for (int i = 0; i < jpMateria.getComponents().length; i++) {
-            if (!Bandera) {
+            if (!bandera) {
                 break;
             }
-            {
-
+            if (jpMateria.getComponents()[i] instanceof JTextField) {
+                bandera = !((JTextField) jpMateria.getComponents()[i]).getText().equals("") ? true : false;
             }
-
         }
-        return false;
-
+        return bandera;
     }
 
     /**
@@ -325,16 +325,20 @@ public class VistaMaterias extends javax.swing.JInternalFrame {
             int id = Integer.parseInt(txtIdMateria.getText());
             int anio = Integer.parseInt(txtAnio.getText());
             String nombre = txtNombreMateria.getText();
+            if (ValidarCamposVacios(jpMateria)) {
+                Materia materia = new Materia();
+                materia.agregarMateria(id, anio, nombre);
+                Vista_Principal.getListaM().add(materia);
+            } else {
+                JOptionPane.showMessageDialog(this, "Complete los campos", "ERROR", HEIGHT);
+            }
 
-            Materia materia = new Materia();
-            materia.agregarMateria(id, anio, nombre);
-
-            Vista_Principal.getListaM().add(materia);
         } catch (NumberFormatException nb) {
-            JOptionPane.showMessageDialog(this, "ingrese un numero", "ERROR", HEIGHT);
+            JOptionPane.showMessageDialog(this, "Ingrese un numero", "ERROR", HEIGHT);
             txtIdMateria.setText("");
             txtAnio.setText("");
-            
+            txtNombreMateria.setText("");
+
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
